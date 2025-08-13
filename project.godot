@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Knight Run Project"
+run/main_scene="uid://wclofm3wuop3"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://manager/game_manager.gd"
+SignalBus="*res://manager/signal_bus.gd"
+AudioManager="*res://manager/audio_manager.gd"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=176
+window/stretch/mode="viewport"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=3

@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://wclofm3wuop3"]
+
+[ext_resource type="PackedScene" uid="uid://cqe4raotd2rg7" path="res://scenes/terrain/terrain.tscn" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://dolv4xo5am2nx" path="res://scenes/hud/hud.tscn" id="1_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://blaqgp6rx6cr6" path="res://scenes/knight/knight.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://c6ebjsmrris2d" path="res://scenes/spawner/spawner.tscn" id="2_l3cfh"]
+
+[node name="Main" type="Node2D"]
+
+[node name="HUD" parent="." instance=ExtResource("1_k2fmo")]
+
+[node name="Terrain" parent="." instance=ExtResource("1_hyk8p")]
+
+[node name="Knight" parent="." instance=ExtResource("2_iuonh")]
+position = Vector2(121, 132)
+
+[node name="Spawner" parent="." instance=ExtResource("2_l3cfh")]
