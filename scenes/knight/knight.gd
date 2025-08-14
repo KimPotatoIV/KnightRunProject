@@ -2,12 +2,14 @@ extends Area2D
 
 ##################################################
 const JUMP_VELOCITY: float = -300.0
+const MAX_JUMP_COUNT: int = 2
 
 @onready var animated_sprite_node: AnimatedSprite2D = $AnimatedSprite2D
 @onready var init_y_position: float = global_position.y
 
 var velocity: Vector2 = Vector2.ZERO
 var is_on_ground: bool = true
+var jump_count: int = 0
 
 ##################################################
 func _ready() -> void:
@@ -28,10 +30,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite_node.play("run")
 	
-	if Input.is_action_just_pressed("ui_accept") and is_on_ground:
+	if Input.is_action_just_pressed("ui_accept") and jump_count < MAX_JUMP_COUNT:
 		velocity.y = JUMP_VELOCITY
 		is_on_ground = false
 		AudioManager.jump_audio_play()
+		
+		jump_count += 1
 	
 	position += velocity * delta
 	
@@ -39,6 +43,7 @@ func _physics_process(delta: float) -> void:
 		global_position.y = init_y_position
 		velocity = Vector2.ZERO
 		is_on_ground = true
+		jump_count = 0
 
 ##################################################
 func _reset_game() -> void:

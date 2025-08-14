@@ -15,8 +15,12 @@ func _process(delta: float) -> void:
 		parallax_b_node.autoscroll = Vector2.ZERO
 		parallax_f_node.autoscroll = Vector2.ZERO
 	else:
-		parallax_b_node.autoscroll = Vector2(-25.0, 0.0)
-		parallax_f_node.autoscroll = Vector2(-100.0, 0.0)
+		if GameManager.get_game_score() <= 300:
+			parallax_b_node.autoscroll = Vector2(-25.0, 0.0)
+			parallax_f_node.autoscroll = Vector2(-100.0, 0.0)
+		else:
+			parallax_b_node.autoscroll = Vector2(-75.0, 0.0)
+			parallax_f_node.autoscroll = Vector2(-150.0, 0.0)
 
 ##################################################
 func _on_score_area_entered(area: Area2D) -> void:

@@ -5,19 +5,19 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jshq1"]
 atlas = ExtResource("1_rkrhf")
-region = Rect2(0, 24, 24, 24)
+region = Rect2(0, 0, 24, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_in6rp"]
 atlas = ExtResource("1_rkrhf")
-region = Rect2(24, 24, 24, 24)
+region = Rect2(24, 0, 24, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1gtwm"]
 atlas = ExtResource("1_rkrhf")
-region = Rect2(48, 24, 24, 24)
+region = Rect2(48, 0, 24, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ndkct"]
 atlas = ExtResource("1_rkrhf")
-region = Rect2(72, 24, 24, 24)
+region = Rect2(72, 0, 24, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jshq1"]
 animations = [{
@@ -41,18 +41,17 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_in6rp"]
 radius = 7.0
-height = 14.0
 
 [node name="SlimeGreen" type="Area2D"]
 script = ExtResource("1_jshq1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_jshq1")
 animation = &"run"
 autoplay = "run"
-frame_progress = 0.56797
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_in6rp")
